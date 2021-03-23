@@ -14,10 +14,6 @@
 export default {
   name: "MoviesPagination",
 
-  // data: () => ({
-  //   currentPageLocal: 1,
-  // }),
-
   props: {
     currentPage: {
       type: Number,
