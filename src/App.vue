@@ -2,7 +2,12 @@
   <div id="app">
     <PosterBg :poster="posterBg" />
     <MoviesList :list="moviesList" @changePoster="onChangePoster" />
-    <MoviesPagination/>
+    <MoviesPagination
+      :current-page="currentPage"
+      :per-page="moviesPerPage"
+      :total="moviesLength"
+      @pageChanged="onPageChanged"
+    />
   </div>
 </template>
 
@@ -22,18 +27,27 @@ export default {
   components: {
     MoviesList,
     PosterBg,
-    MoviesPagination
+    MoviesPagination,
   },
 
   computed: {
-    ...mapGetters("movies", ["moviesList"]),
+    ...mapGetters("movies", [
+      "moviesList",
+      "moviesPerPage",
+      "currentPage",
+      "moviesLength",
+    ]),
   },
 
   methods: {
-    ...mapActions("movies", ["fetchMovies"]),
+    ...mapActions("movies", ["changeCurrentPage"]),
 
     onChangePoster(poster) {
       this.posterBg = poster;
+    },
+
+    onPageChanged(page) {
+      this.changeCurrentPage(page);
     },
   },
 };
