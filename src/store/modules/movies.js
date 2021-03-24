@@ -113,7 +113,15 @@ const moviesStore = {
 
         console.log(response);
       } catch (error) {
-        console.error(error.message);
+        dispatch(
+          "showNotify",
+          {
+            msg: error.message,
+            title: "Error",
+            variant: "danger",
+          },
+          { root: true }
+        );
       } finally {
         dispatch("toggleLoader", false, { root: true });
       }
