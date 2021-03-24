@@ -1,6 +1,9 @@
 <template>
   <div id="app">
+    <Loader />
+    <Notification />
     <PosterBg :poster="posterBg" />
+    <Header />
     <MoviesList :list="moviesList" @changePoster="onChangePoster" />
     <MoviesPagination
       :current-page="currentPage"
@@ -15,6 +18,9 @@
 import { mapActions, mapGetters } from "vuex";
 import MoviesList from "@/components/MoviesList";
 import PosterBg from "@/components/PosterBg";
+import Loader from "@/components/Loader";
+import Notification from "@/components/Notification";
+import Header from "@/components/Header";
 import MoviesPagination from "@/components/MoviesPagination";
 
 export default {
@@ -28,6 +34,9 @@ export default {
     MoviesList,
     PosterBg,
     MoviesPagination,
+    Loader,
+    Header,
+    Notification,
   },
 
   computed: {
