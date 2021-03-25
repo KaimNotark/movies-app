@@ -46,7 +46,7 @@ export default {
 .movies-pagination {
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: auto;
 }
 /*
 Для стилизации компонента пагинации, который не мы создавали,
