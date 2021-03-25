@@ -8,7 +8,7 @@
             :movie="movie"
             @mouseover.native="onMouseOver(movie.Poster)"
             @removeItem="onRemoveItem"
-            @showInfoModal="onShowMovieInfo"
+            @showModal="onShowMovieInfo"
           />
         </BCol>
       </template>
